@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./services/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ../app:/app
+    networks:
+      - app-network
+
+  app:
+    build: ./services/php
+    volumes:
+      - ../app:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
