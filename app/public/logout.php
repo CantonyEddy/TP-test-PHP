@@ -1,5 +1,5 @@
 <?php
-include '../includes/functions.php';
+include __DIR__ . '/includes/functions.php';
 
 logoutUser();
 ?>

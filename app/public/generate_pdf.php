@@ -1,6 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
-include '../includes/database.php';
+require_once __DIR__ . '/vendor/autoload.php';
+include __DIR__ . '/includes/database.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;

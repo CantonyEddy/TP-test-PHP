@@ -37,8 +37,8 @@
 
 <div class="container mt-5">
     <?php
-    include '../includes/database.php';
-    include '../includes/functions.php';
+    include __DIR__ . '/includes/database.php';
+    include __DIR__ . '/includes/functions.php';
 
     renderHomePage();
     ?>

@@ -1,6 +1,6 @@
 <?php
-include '../includes/database.php';
-include '../includes/functions.php';
+include __DIR__ . '/includes/database.php';
+include __DIR__ . '/includes/functions.php';
 
 session_start();
 if (isset($_SESSION['user_id'])) {

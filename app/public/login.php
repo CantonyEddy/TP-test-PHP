@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Lien vers ton fichier CSS personnalisé -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,8 +37,8 @@
         <div class="col-md-6">
             <h2 class="text-center mb-4">Connexion</h2>
             <?php
-            include '../includes/database.php';
-            include '../includes/functions.php';
+            include __DIR__ . '/includes/database.php';
+            include __DIR__ . '/includes/functions.php';
 
             renderLoginPage();
             echo '<p class="mt-3 text-center">Pas encore inscrit ? <a href="register.php">Créez un compte ici</a></p>';
