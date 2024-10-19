@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Titres */
+h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Formulaire */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"],
+form button[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover,
+form button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Sections dynamiques */
+.experience-item,
+.education-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+.experience-item button,
+.education-item button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #dc3545;
+}
+
+.experience-item button:hover,
+.education-item button:hover {
+    background-color: #c82333;
+}
+
+/* Notifications */
+.notification {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

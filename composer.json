@@ -1,0 +1,17 @@
+{
+    "name": "canto/tp-test-php",
+    "autoload": {
+        "psr-4": {
+            "Canto\\TpTestPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CantonyEddy",
+            "email": "cantony.eddy@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}

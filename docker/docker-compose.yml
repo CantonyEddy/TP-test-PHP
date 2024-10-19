@@ -1,23 +1,30 @@
 version: '3.8'
 
 services:
-  webserver:
+  nginx:
     image: nginx:latest
+    container_name: nginx
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
-      - ./services/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
-      - ../app:/app
+      - ../app/public:/var/www/html
+      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - php
     networks:
-      - app-network
+      - portfolio-net
 
-  app:
+  php:
     build: ./services/php
+    container_name: php
     volumes:
-      - ../app:/app
+      - ../app/public:/var/www/html
+      - ../app/includes:/var/www/html/includes
+      - ../app/css:/var/www/html/css
+      - ../app/js:/var/www/html/js
     networks:
-      - app-network
+      - portfolio-net
 
 networks:
-  app-network:
+  portfolio-net:
     driver: bridge
