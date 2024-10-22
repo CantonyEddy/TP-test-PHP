@@ -3,6 +3,26 @@ include __DIR__ . '/includes/database.php';
 
 $conn = connectToDatabase();
 
+// Vérifier si la colonne 'is_favorite' existe déjà, sinon l'ajouter
+$query = "PRAGMA table_info(projects)";
+$columns = $conn->query($query);
+
+$column_exists = false;
+while ($column = $columns->fetchArray(SQLITE3_ASSOC)) {
+    if ($column['name'] === 'is_favorite') {
+        $column_exists = true;
+        break;
+    }
+}
+
+if (!$column_exists) {
+    $alter_query = "ALTER TABLE projects ADD COLUMN is_favorite INTEGER DEFAULT 0";
+    $conn->exec($alter_query);
+    echo "Colonne 'is_favorite' ajoutée à la table 'projects'.\n";
+}
+
+$conn->close();
+
 try {
     // Création de la table "users"
     $query = "

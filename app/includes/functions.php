@@ -51,11 +51,25 @@ function renderCVPage($user_id) {
 
     if ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         echo "<h2>Mon CV</h2>";
-        echo "<p>Titre: " . $row['title'] . "</p>";
-        echo "<p>Description: " . $row['description'] . "</p>";
-        echo "<p>Compétences: " . json_encode($row['skills']) . "</p>";
-        echo "<p>Expériences: " . str_replace('||', '<br>', $row['experiences_external']) . "</p>";
-        echo "<p>Éducation: " . str_replace('||', '<br>', $row['education_external']) . "</p>";
+        echo "<p><strong>Titre:</strong> " . htmlspecialchars($row['title']) . "</p>";
+        echo "<p><strong>Description:</strong> " . htmlspecialchars($row['description']) . "</p>";
+        echo "<p><strong>Compétences:</strong> " . htmlspecialchars($row['skills']) . "</p>";
+
+        // Expériences Professionnelles
+        $experiences = explode('||', $row['experiences_external']);
+        echo "<h3>Expériences Professionnelles:</h3>";
+        foreach ($experiences as $experience) {
+            echo "<p>- " . htmlspecialchars($experience) . "</p>";
+        }
+
+        // Éducation
+        $education = explode('||', $row['education_external']);
+        echo "<h3>Éducation:</h3>";
+        foreach ($education as $education_item) {
+            echo "<p>- " . htmlspecialchars($education_item) . "</p>";
+        }
+    } else {
+        echo "Aucun CV trouvé pour cet utilisateur.";
     }
 
     $stmt->close();
