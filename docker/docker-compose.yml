@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   nginx:
     image: nginx:latest
@@ -22,6 +20,13 @@ services:
       - ../app/includes:/var/www/html/includes
       - ../app/css:/var/www/html/css
       - ../app/js:/var/www/html/js
+    networks:
+      - portfolio-net
+
+  adminer:
+    image: adminer:latest
+    ports:
+      - "3000:3000"
     networks:
       - portfolio-net
 
