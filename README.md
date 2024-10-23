@@ -23,3 +23,30 @@ Ce projet est un site web de CV/Portfolio permettant aux utilisateurs de créer,
 1. Clonez le dépôt :
    ```bash
    git clone https://github.com/CantonyEddy/TP-test-PHP.git
+
+2. Accédez au dossier du projet :
+   ```bash
+   cd TP-test-PHP/Docker
+
+3. Construisez les conteneurs Docker :
+   ```bash
+   docker-compose up --build
+
+4. Initialisez la base de données SQLite :
+   ```bash
+   docker exec -it php /bin/bash
+   php /var/www/html/init_db.php
+
+## Utilisation
+
+Accédez au site en ouvrant votre navigateur à l'adresse http://localhost:8080.
+
+## Problèmes Connus
+
+ - La génération de PDF nécessite l'installation correcte de **DomPDF**.
+
+ - Certains chemins d'inclusion doivent être revérifiés si des erreurs se produisent.
+
+## Contribuer
+
+Aucun contributeur demandé
