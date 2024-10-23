@@ -22,4 +22,4 @@ Ce projet est un site web de CV/Portfolio permettant aux utilisateurs de créer,
 
 1. Clonez le dépôt :
    ```bash
-   git clone <url-du-repository>
+   git clone <(https://github.com/CantonyEddy/TP-test-PHP.git)>
